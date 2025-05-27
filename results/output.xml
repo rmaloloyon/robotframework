@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.3 on win32)" generated="20250528 05:02:40.761" rpa="false" schemaversion="4">
+<suite id="s1" name="Robotframework" source="C:\Users\ricardo.maloloy-on\OneDrive - Quantrics\Desktop\Bell Canada\Repositories\github-com\external\robotframework">
+<suite id="s1-s1" name="Profiles" source="C:\Users\ricardo.maloloy-on\OneDrive - Quantrics\Desktop\Bell Canada\Repositories\github-com\external\robotframework\profiles.robot">
+<test id="s1-s1-t1" name="Search Employee Profiles and Assert Results" line="22">
+<kw name="Open Browser" library="SeleniumLibrary">
+<msg timestamp="20250528 05:02:40.931" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" starttime="20250528 05:02:40.931" endtime="20250528 05:02:46.668"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250528 05:02:46.669" endtime="20250528 05:02:46.706"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250528 05:02:46.706" endtime="20250528 05:02:47.147"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<msg timestamp="20250528 05:02:47.147" level="INFO">Typing text 'Admin' into text field '//*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input'.</msg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" starttime="20250528 05:02:47.147" endtime="20250528 05:02:47.235"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250528 05:02:47.235" endtime="20250528 05:02:47.245"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<msg timestamp="20250528 05:02:47.245" level="INFO">Typing text 'admin123' into text field '//*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/div[2]/input'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" starttime="20250528 05:02:47.245" endtime="20250528 05:02:47.338"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<msg timestamp="20250528 05:02:47.339" level="INFO">Clicking button '//*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" starttime="20250528 05:02:47.339" endtime="20250528 05:02:47.414"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PIM}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250528 05:02:47.414" endtime="20250528 05:02:49.097"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<msg timestamp="20250528 05:02:49.099" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[2]/a/span'.</msg>
+<arg>${PIM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20250528 05:02:49.099" endtime="20250528 05:02:50.298"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Employee_ID_PIM}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250528 05:02:50.299" endtime="20250528 05:02:50.757"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<msg timestamp="20250528 05:02:50.757" level="INFO">Typing text 'E10158808' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/input'.</msg>
+<arg>${Employee_ID_PIM}</arg>
+<arg>${EMPLOYEE_IDS}[0]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" starttime="20250528 05:02:50.757" endtime="20250528 05:02:50.942"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<msg timestamp="20250528 05:02:50.944" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]'.</msg>
+<arg>${Search_Button_PIM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20250528 05:02:50.944" endtime="20250528 05:02:51.046"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<msg timestamp="20250528 05:02:51.066" level="INFO">${employee_id} = </msg>
+<var>${employee_id}</var>
+<arg>${Employee_ID_PIM}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20250528 05:02:51.047" endtime="20250528 05:02:51.066"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20250528 05:02:51.066" endtime="20250528 05:02:53.328"/>
+</kw>
+<doc>Searches for employee profiles and asserts the results.</doc>
+<status status="PASS" starttime="20250528 05:02:40.931" endtime="20250528 05:02:53.328"/>
+</test>
+<status status="PASS" starttime="20250528 05:02:40.781" endtime="20250528 05:02:53.328"/>
+</suite>
+<status status="PASS" starttime="20250528 05:02:40.765" endtime="20250528 05:02:53.344"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robotframework">Robotframework</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Profiles">Robotframework.Profiles</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
