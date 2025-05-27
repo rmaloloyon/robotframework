@@ -1,17 +1,11 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource   ./locators/profiles.resource
+Variables   ./variables/variables.yaml
 
 *** Variables ***
 ${ENV}        uat
 ${BROWSER}    chrome
-${URL}        https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index
-${USERNAME}   Admin
-${PASSWORD}   admin123
-
-${USERNAME_INPUT}    //*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input
-${PASSWORD_INPUT}    //*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/div[2]/input
-${LOGIN_BUTTON}      //*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button
 
 # Search  and Assert Employee Profiles
 @{EMPLOYEE_IDS}    E10158808
@@ -21,12 +15,12 @@ ${LOGIN_BUTTON}      //*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div
 *** Test Cases ***
 Search Employee Profiles and Assert Results
     [Documentation]    Searches for employee profiles and asserts the results.
-    Open Browser    ${URL}    ${BROWSER}
+    Open Browser    ${utm}[${ENV}][url]    ${BROWSER}
     Maximize Browser Window
     Wait Until Page Contains Element    ${USERNAME_INPUT}  10s
-    Input Text    ${USERNAME_INPUT}    ${USERNAME}
+    Input Text    ${USERNAME_INPUT}    ${utm}[${ENV}][username]
     Wait Until Page Contains Element    ${PASSWORD_INPUT}  10s
-    Input Text    ${PASSWORD_INPUT}    ${PASSWORD}
+    Input Text    ${PASSWORD_INPUT}    ${utm}[${ENV}][password]
     Click Button    ${LOGIN_BUTTON}
     Wait Until Page Contains Element    ${PIM}  10s
     Click Element    ${PIM}
