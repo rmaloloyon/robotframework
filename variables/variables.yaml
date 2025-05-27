@@ -1,6 +1,0 @@
-utm:
-  uat:
-    #hostname: https://utm-uat.int.bell.ca/1/utm.aspx
-    hostname: https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index
-    usernmae: Admin
-    password: Admin123
