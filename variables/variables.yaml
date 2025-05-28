@@ -1,0 +1,7 @@
+# Admin Credentials and URL for OrangeHRM
+# This file contains the necessary variables for accessing the OrangeHRM application.
+utm:
+  uat:
+    url: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+    username: Admin
+    password: admin123
