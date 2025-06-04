@@ -8,7 +8,7 @@ ${ENV}        uat
 ${BROWSER}    chrome
 
 # Search  and Assert Employee Profiles
-@{EMPLOYEE_IDS}    0669    0657    0640
+@{EMPLOYEE_IDS}    0423    0415    0407
 # @{JOB_TITLES}      CEO
 # @{SUB_UNITS}       Administration
 
@@ -18,6 +18,7 @@ Search and Assert Employee profiles
     FOR   ${emp_id}    IN    @{EMPLOYEE_IDS}
         Get All Employee Profiles    ${emp_id}
     END
+    Reload Page
     [Teardown]    Close All Browsers
 
 *** Keywords ***

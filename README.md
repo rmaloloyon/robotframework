@@ -63,6 +63,32 @@ robotframework-seleniumlibrary
 robot tests/login_search_test.robot
 ```
 
+## Results
+```
+==============================================================================
+Robotframework
+==============================================================================
+Robotframework.Profiles
+==============================================================================
+Search and Assert Employee profiles
+DevTools listening on ws://127.0.0.1:61782/devtools/browser/5f1a028c-ca9b-4c4f-be03-c673450bbcdf
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1749041796.182917    9924 voice_transcription.cc:58] Registering VoiceTranscriptionCapability
+.Created TensorFlow Lite XNNPACK delegate for CPU.
+Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Search and Assert Employee profiles                                   | PASS |
+------------------------------------------------------------------------------
+Robotframework.Profiles                                               | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Robotframework                                                        | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  .\robotframework\results\output.xml
+Log:     .\robotframework\results\log.html
+Report:  .\robotframework\results\report.html
+```
+
 ## Profile Resources
 ```
 *** Variables ***
@@ -119,6 +145,7 @@ Search and Assert Employee profiles
     FOR   ${emp_id}    IN    @{EMPLOYEE_IDS}
         Get All Employee Profiles    ${emp_id}
     END
+    Reload Page
     [Teardown]    Close All Browsers
 ```
 ### 🔑 Keywords
