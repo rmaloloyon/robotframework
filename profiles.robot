@@ -8,7 +8,7 @@ ${ENV}        uat
 ${BROWSER}    chrome
 
 # Search  and Assert Employee Profiles
-@{EMPLOYEE_IDS}    0312    0360    0367
+@{EMPLOYEE_IDS}    0669    0657    0640
 # @{JOB_TITLES}      CEO
 # @{SUB_UNITS}       Administration
 
@@ -31,7 +31,7 @@ Open Browser And Login
     Click Button    ${LOGIN_BUTTON}
 
 Get All Employee Profiles
-    [Documentation]    Retrieves all employee IDs from the PIM section.
+    [Documentation]    Search for employee profiles by ID and assert the results.
     Wait Until Page Contains Element    ${PIM}  10s
     Click Element    ${PIM}
 
